@@ -26,7 +26,7 @@ Common tags (gtd contexts) included:
 
 ### Demo
 
-![Demo MDPSolarized](https://github.com/fiveagle/MDPSolarizedDark-TaskPaper-Theme/blob/master/Demo/MDPSolarizedDemo.jpg)
+![Demo MDPSolarized](https://raw.github.com/fiveagle/MDPSolarizedDark-TaskPaper-Theme/master/Demo/MDPSolarizedDemo.jpg)
 
 ## References and Contacts
 
