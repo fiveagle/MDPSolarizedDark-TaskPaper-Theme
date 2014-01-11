@@ -1,0 +1,225 @@
+
+<!-- MDPSolarizedDark TaskPaper 2.x Theme
+
+  Created by Marco Di Peco on 11/01/14.
+  Original Palette http://ethanschoonover.com/solarized
+  
+  It's recommended to use with Source Code Pro https://github.com/adobe/source-code-pro
+  
+  Color Memo from darker to lighter
+  
+  Background tones dark:
+  base03:    #002b36;
+  base02:    #073642;
+  
+  Content tones:
+  base01:    #586e75;
+  base00:    #657b83;
+  base0:     #839496;
+  base1:     #93a1a1;
+  
+  Background tones light:
+  base2:     #eee8d5;
+  base3:     #fdf6e3;
+  
+  Accent Colors:
+  yellow:    #b58900;
+  orange:    #cb4b16;
+  red:       #dc322f;
+  magenta:   #d33682;
+  violet:    #6c71c4;
+  blue:      #268bd2;
+  cyan:      #2aa198;
+  green:     #859900;
+  
+  Common tags (gtd contexts) included:
+  Yellow: @ToComplete @calls @computer @routines
+  Orange: @Today @ToCheck @NextUpdate @Focus
+  Red: @bug @overdue @high @urgent
+  Magenta: @think @hangingAround
+  Violet: @desing @home
+  Cyan: @anywhere @shortDashes
+  Green: @research @errands @brainDead
+
+-->
+
+<theme>
+  <!--Solarize color palette, see http://ethanschoonover.com/solarized-->
+  <color id="blue" red="0.149" green="0.545" blue="0.824" alpha="1.0"/>
+  <color id="base01" red="0.345" green="0.431" blue="0.459" alpha="1.0"/>
+  <color id="base00" red="0.396" green="0.482" blue="0.514" alpha="1.0"/>
+  <color id="base03" red="0.000" green="0.169" blue="0.212" alpha="1.0"/>
+  <color id="base02" red="0.027" green="0.212" blue="0.259" alpha="1.0"/>
+  <color id="yellow" red="0.710" green="0.537" blue="0.000" alpha="1.0"/>
+  <color id="base0" red="0.514" green="0.580" blue="0.588" alpha="1.0"/>
+  <color id="base1" red="0.576" green="0.631" blue="0.631" alpha="1.0"/>
+  <color id="base2" red="0.933" green="0.910" blue="0.835" alpha="1.0"/>
+  <color id="base3" red="0.992" green="0.965" blue="0.890" alpha="1.0"/>
+  <color id="green" red="0.522" green="0.600" blue="0.000" alpha="1.0"/>
+  <color id="violet" red="0.424" green="0.443" blue="0.769" alpha="1.0"/>
+  <color id="orange" red="0.796" green="0.294" blue="0.086" alpha="1.0"/>
+  <color id="cyan" red="0.165" green="0.631" blue="0.596" alpha="1.0"/>
+  <color id="magenta" red="0.827" green="0.212" blue="0.510" alpha="1.0"/>
+  <color id="red" red="0.863" green="0.196" blue="0.184" alpha="1.0"/>
+
+  <!--Mapping to taskpaper entities-->
+  <color id="foreground" extendsColorID="base02"/>
+  <color id="selection" extendsColorID="base02"/>
+  <color id="handle" extendsColorID="base1"/>
+  <color id="insertionPoint" extendsColorID="base0"/>
+  <color id="header" extendsColorID="base2"/>
+  <color id="tag" extendsColorID="cyan"/>
+  <color id="done" extendsColorID="base01"/>
+  <color id="background" extendsColorID="base03"/>
+  <color id="note" extendsColorID="base00"/>
+  <color id="task" extendsColorID="base1"/>
+  <color id="project" extendsColorID="cyan"/>
+    
+  <!--Fonts Styles-->
+  <font id="defaultFont" name="Source Code Pro" size="16" />
+  <font id="highlightFont" name="Source Code Pro" size="18" />
+  <font id="noteFont" name="Source Code Pro" size="15" />
+  <font id="headerFont" name="Source Code Pro Light" size="20" />
+  <font id="projectFont" name="Source Code Pro Medium" size="21" />
+
+  <!-- Window Style -->
+  <window foregroundColorID="foreground" backgroundColorID="background" shouldUseHUDScrollers="yes"/>
+
+  <!-- Text View Style -->
+  <characterStyle foregroundColorID="foreground" id="base" fontID="defaultFont"/>
+  <paragraphStyle 
+    paragraphSpacing="4" 
+    paragraphSpacingBefore="0" 
+    lineSpacing="0" 
+    lineHeightMultiple="1.0" 
+    id="base" 
+    alignment="NSLeftTextAlignment"/>
+  	<textView
+		shouldAntialiasText="yes"
+		shouldShowNoteHandles="yes"
+		shouldShowProjectHandles="yes"
+		defaultCharacterStyleID="base"
+		insertionPointColorID="insertionPoint"
+		selectionColorID="selection"
+		handleColorID="handle"
+		tagColorID="tag"
+	/>	
+
+  <!-- Task style. This section defines the styles that are applied to task lines. -->
+  <color id="task" extendsColorID="task"/>
+  <font id="task" extendsFontID="defaultFont" />
+  <characterStyle id="task" fontID="task" foregroundColorID="task" />
+  <entryRule matchesQuery="type = task" lineCharacterStyleID="task" paragraphStyleID="base" />
+   
+  <!-- Project style. This section defines the styles that are applied to project lines. -->
+  <color id="project" extendsColorID="project"/>
+  <font id="project" extendsFontID="projectFont" />
+  <characterStyle id="project" fontID="project" foregroundColorID="project" />
+  <paragraphStyle id="project" extendsParagraphStyleID="base" paragraphSpacingBefore="0" paragraphSpacing="4" />
+  <entryRule matchesQuery="type = &quot;project&quot;" lineCharacterStyleID="project" paragraphStyleID="project" />
+
+  <!-- Note style. This section defines the styles that are applied to note lines. -->
+	<color id="note" extendsColorID="note"/>
+	<font id="note" extendsFontID="noteFont"/>
+	<characterStyle id="note" fontID="note" foregroundColorID="note" />
+	<entryRule matchesQuery="type = note" lineCharacterStyleID="note" paragraphStyleID="base" />
+
+  <!-- GroupHeader style. This section defines the styles that are applied to groupHeader lines. (top level projects) -->
+  <color id="groupHeader" extendsColorID="header"/>
+  <font id="groupHeader" extendsFontID="headerFont"/>
+	<characterStyle id="groupHeader" fontID="groupHeader" foregroundColorID="groupHeader" />
+	<paragraphStyle id="groupHeader" extendsParagraphStyleID="base" paragraphSpacingBefore="19" paragraphSpacing="7" />
+	<entryRule matchesQuery="isgroupheader" paragraphStyleID="groupHeader" lineCharacterStyleID="groupHeader" />
+
+  <!-- @done style. This section defines the styles that are applied to lines tagged with @done. -->
+  <color id="done" extendsColorID="done"/>
+	<characterStyle id="done" foregroundColorID="done" strikethroughStyle="NSUnderlineStyleSingle" />
+	<entryRule matchesQuery="@done" contentCharacterStyleID="done" />
+
+  <!-- 1- Yellow style. This section defines the styles that are applied to lines tagged with @ToComplete @calls @computer @routines -->
+  <color id="yellowColor" extendsColorID="yellow" />
+  <characterStyle id="yellowStyle" foregroundColorID="yellowColor" />
+  <font id="yellowFont" extendsFontID="highlightFont" />
+  <entryRule matchesQuery="@ToComplete and not @done" contentCharacterStyleID="yellowStyle" />
+  <entryRule matchesQuery="@calls and not @done" contentCharacterStyleID="yellowStyle" />
+  <entryRule matchesQuery="@computer and not @done" contentCharacterStyleID="yellowStyle" />
+  <entryRule matchesQuery="@routines and not @done" contentCharacterStyleID="yellowStyle" />
+  <entryRule matchesQuery="@routine and not @done" contentCharacterStyleID="yellowStyle" />
+  <!-- To assign a tag (gtd context) to this color simply uncomment the line below changing "stringToChange" with the tag of your choice -->
+  <!-- <entryRule matchesQuery="@stringToChange and not @done" contentCharacterStyleID="yellowStyle" /> -->
+  
+  <!-- 2- Orange style. This section defines the styles that are applied to lines tagged with 
+    @Today 
+    @ToCheck 
+    @NextUpdate
+    @Focus
+  -->
+  <color id="orangeColor" extendsColorID="orange" />
+  <characterStyle id="orangeStyle" foregroundColorID="orangeColor" />
+  <font id="orangeFont" extendsFontID="highlightFont" />
+  <entryRule matchesQuery="@today and not @done" contentCharacterStyleID="orangeStyle" fontID="orangeFont" /> 
+  <entryRule matchesQuery="@toCheck and not @done" contentCharacterStyleID="orangeStyle" />
+  <entryRule matchesQuery="@nextUpdate and not @done" contentCharacterStyleID="orangeStyle" />
+  <entryRule matchesQuery="@focus and not @done" contentCharacterStyleID="orangeStyle" />
+  <!-- To assign a tag (gtd context) to this color simply uncomment the line below changing "stringToChange" with the tag of your choice -->
+  <!-- <entryRule matchesQuery="@stringToChange and not @done" contentCharacterStyleID="orangeStyle" /> -->
+
+  <!-- 3- Red style. This section defines the styles that are applied to lines tagged with @bug @overdue @high @urgent-->
+  <color id="redColor" extendsColorID="red" />
+  <characterStyle id="redStyle" foregroundColorID="redColor" />
+  <font id="redFont" extendsFontID="highlightFont" />
+  <entryRule matchesQuery="@bug and not @done" contentCharacterStyleID="redStyle" />
+  <entryRule matchesQuery="@overdue and not @done" contentCharacterStyleID="redStyle" fontID="redFont"/>
+  <entryRule matchesQuery="@high and not @done" contentCharacterStyleID="redStyle" />
+  <entryRule matchesQuery="@urgent and not @done" contentCharacterStyleID="redStyle" />
+  <!-- To assign a tag (gtd context) to this color simply uncomment the line below changing "stringToChange" with the tag of your choice -->
+  <!-- <entryRule matchesQuery="@stringToChange and not @done" contentCharacterStyleID="redStyle" /> -->
+
+  <!-- 4- Magenta style. This section defines the styles that are applied to lines tagged with @think @hangingAround -->
+  <color id="magentaColor" extendsColorID="magenta" />
+  <characterStyle id="magentaStyle" foregroundColorID="magentaColor" />
+  <font id="magentaFont" extendsFontID="highlightFont" />
+  <entryRule matchesQuery="@think and not @done" contentCharacterStyleID="magentaStyle" />
+  <entryRule matchesQuery="@hangingAround and not @done" contentCharacterStyleID="magentaStyle" />
+  <!-- To assign a tag (gtd context) to this color simply uncomment the line below changing "stringToChange" with the tag of your choice -->
+  <!-- <entryRule matchesQuery="@stringToChange and not @done" contentCharacterStyleID="magentaStyle" /> -->
+
+  <!-- 5- Violet style. This section defines the styles that are applied to lines tagged with @desing @home -->
+  <color id="violetColor" extendsColorID="violet" />
+  <characterStyle id="violetStyle" foregroundColorID="violetColor" />
+  <font id="violetFont" extendsFontID="highlightFont" />
+  <entryRule matchesQuery="@design and not @done" contentCharacterStyleID="violetStyle" />
+  <entryRule matchesQuery="@plan and not @done" contentCharacterStyleID="violetStyle" />
+  <entryRule matchesQuery="@home and not @done" contentCharacterStyleID="violetStyle" />
+  <!-- To assign a tag (gtd context) to this color simply uncomment the line below changing "stringToChange" with the tag of your choice -->
+  <!-- <entryRule matchesQuery="@stringToChange and not @done" contentCharacterStyleID="violetStyle" /> -->
+
+  <!-- 6- Blue style. This section defines the styles that are applied to lines tagged with @code @office -->
+  <color id="blueColor" extendsColorID="blue" />
+  <characterStyle id="blueStyle" foregroundColorID="blueColor" />
+  <font id="blueFont" extendsFontID="highlightFont" />
+  <entryRule matchesQuery="@code and not @done" contentCharacterStyleID="blueStyle" />
+  <entryRule matchesQuery="@office and not @done" contentCharacterStyleID="blueStyle" />
+  <!-- To assign a tag (gtd context) to this color simply uncomment the line below changing "stringToChange" with the tag of your choice -->
+  <!-- <entryRule matchesQuery="@stringToChange and not @done" contentCharacterStyleID="blueStyle" /> -->
+
+  <!-- 7- Cyan style. This section defines the styles that are applied to lines tagged with @anywhere @shortDashes -->
+  <color id="cyanColor" extendsColorID="cyan" />
+  <characterStyle id="cyanStyle" foregroundColorID="cyanColor" />
+  <font id="cyanFont" extendsFontID="highlightFont" />
+  <entryRule matchesQuery="@anywhere and not @done" contentCharacterStyleID="cyanStyle" />
+  <entryRule matchesQuery="@shortDashes and not @done" contentCharacterStyleID="cyanStyle" />
+  <!-- To assign a tag (gtd context) to this color simply uncomment the line below changing "stringToChange" with the tag of your choice -->
+  <!-- <entryRule matchesQuery="@stringToChange and not @done" contentCharacterStyleID="cyanStyle" /> -->
+
+  <!-- 8- Green style. This section defines the styles that are applied to lines tagged with @research @errands @brainDead -->
+  <color id="greenColor" extendsColorID="green" />
+  <characterStyle id="greenStyle" foregroundColorID="greenColor" />
+  <font id="greenFont" extendsFontID="highlightFont" />
+  <entryRule matchesQuery="@research and not @done" contentCharacterStyleID="greenStyle" />
+  <entryRule matchesQuery="@errands and not @done" contentCharacterStyleID="greenStyle" />
+  <entryRule matchesQuery="@brainDead and not @done" contentCharacterStyleID="greenStyle" />
+  <!-- To assign a tag (gtd context) to this color simply uncomment the line below changing "stringToChange" with the tag of your choice -->
+  <!-- <entryRule matchesQuery="@stringToChange and not @done" contentCharacterStyleID="greenStyle" /> -->
+  
+</theme>
